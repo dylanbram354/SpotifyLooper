@@ -11,7 +11,6 @@ export default function Login(){
     function handleTextChange(val){
         setHash(SHA256(val).toString())
         let b64 = UtilityFunctions.base64encode(hash);
-        console.log(b64);
         setBase64Hash(b64);
     }
     return(

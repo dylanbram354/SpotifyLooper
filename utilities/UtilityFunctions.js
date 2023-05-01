@@ -1,3 +1,5 @@
+var Buffer = require('buffer').Buffer;
+
 export default class UtilityFunctions {
   static generateRandomString(length) {
     let text = "";
@@ -11,9 +13,6 @@ export default class UtilityFunctions {
   }
 
   static base64encode(string) {
-    return btoa(string)
-      .replace(/\+/g, "-")
-      .replace(/\//g, "_")
-      .replace(/=+$/, "");
+    return Buffer.from(string ?? '').toString('base64');
   }
 }
