@@ -17,7 +17,6 @@ export default function Login(props){
     }
 
     useEffect(() => {
-        console.log(window.location.href);
         if(isLoading){
             let state = Utility.generateRandomString(16);
             let codeVerifier = Utility.generateRandomString(20);
