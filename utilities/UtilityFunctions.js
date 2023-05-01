@@ -1,6 +1,7 @@
 var Buffer = require('buffer').Buffer;
+import { SHA256 } from "crypto-js";
 
-export default class UtilityFunctions {
+export default class Utility {
   static generateRandomString(length) {
     let text = "";
     let possible =
@@ -14,5 +15,10 @@ export default class UtilityFunctions {
 
   static base64encode(string) {
     return Buffer.from(string ?? '').toString('base64');
+  }
+
+  static generateCodeChallenge(codeVerifier){
+    let hash = SHA256(codeVerifier).toString();
+    return this.base64encode(hash);
   }
 }
