@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, Button, Alert, TextInput } from "react-native";
+import { SHA256 } from "crypto-js";
 
 const styles = StyleSheet.create({
   center: {
@@ -18,8 +19,8 @@ class MyComponent extends React.Component {
 
   handleTextInput(val) {
     let newGreetingType = 2;
-    if(val.toString().length == 0){
-        newGreetingType = 1;
+    if (val.toString().length == 0) {
+      newGreetingType = 1;
     }
     this.setState({ name: val, greetingType: newGreetingType });
   }
